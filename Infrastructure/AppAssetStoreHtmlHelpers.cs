@@ -7,14 +7,40 @@ namespace Infrastructure {
     using System.Web.Mvc;
 
     public static class AppAssetStoreHtmlHelpers {
+        private static string Stylesheets(this HtmlHelper html, string[] cssFiles) {
+            var sb = new StringBuilder();
+            foreach (var cssFile in cssFiles) {
+                sb.Append(html.Stylesheet(cssFile));
+            }
+
+            return sb.ToString();
+        }
+
+        private static string Stylesheet(this HtmlHelper html, string cssFile) {
+            return string.Format("<link type=\"text/css\" rel=\"stylesheet\" href=\"{0}\"/>", UrlHelper.GenerateContentUrl(cssFile, html.ViewContext.HttpContext));
+        }
+
+        private static string Scripts(this HtmlHelper html, string[] jsFiles) {
+            var sb = new StringBuilder();
+            foreach (var jsFile in jsFiles) {
+                sb.Append(html.Script(jsFile));
+            }
+
+            return sb.ToString();
+        }
+
+        private static string Script(this HtmlHelper html, string jsFile) {
+            return string.Format("<script type=\"text/javascript\" src=\"{0}\"></script>", UrlHelper.GenerateContentUrl(jsFile, html.ViewContext.HttpContext));
+        }
+
         public static IHtmlString RenderAppScripts(this HtmlHelper html) {
-            AppAssetStore am = AppAssetStore.GetInstance;
-            AppAsset[] appAssets = am.GetRenderableAssets(AssetType.ScriptFile, AssetType.Script).ToArray();
+            var am = AppAssetStore.GetInstance;
+            var appAssets = am.GetRenderableAssets(AssetType.ScriptFile, AssetType.Script).ToArray();
 
             var sb = new StringBuilder();
             var bundles = new List<AppAsset>();
 
-            foreach (AppAsset asset in appAssets) {
+            foreach (var asset in appAssets) {
                 switch (asset.Type) {
                     case AssetType.Script:
                         if (bundles.Any()) {
@@ -38,13 +64,13 @@ namespace Infrastructure {
         }
 
         public static IHtmlString RenderAppStyles(this HtmlHelper html) {
-            AppAssetStore am = AppAssetStore.GetInstance;
-            AppAsset[] appAssets = am.GetRenderableAssets(AssetType.StyleFile, AssetType.Style).ToArray();
+            var am = AppAssetStore.GetInstance;
+            var appAssets = am.GetRenderableAssets(AssetType.StyleFile, AssetType.Style).ToArray();
 
             var sb = new StringBuilder();
             var bundles = new List<AppAsset>();
 
-            foreach (AppAsset asset in appAssets) {
+            foreach (var asset in appAssets) {
                 switch (asset.Type) {
                     case AssetType.Style:
                         if (bundles.Any()) {

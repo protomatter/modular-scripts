@@ -1,5 +1,8 @@
 ﻿# Modular Javacript and Stylesheets in C# #
 
+**Blog Post:** http://www.protomatter.co.uk/blog/development/2017/01/modular-javacript-and-stylesheets-in-c-sharp/ 
+a little more information about this approach.
+
 A simple approach to modular Javascript registration in C#. This Solution demonstrates a straight forward 
 method for loading Javascript files and stylesheets from multiple C# projects at runtime.
 
@@ -46,7 +49,8 @@ by [Harry McIntyre](http://www.adverseconditionals.com/) which gives us access t
 module assemblies.
 
 In this project we have a default controller and a view. The view uses a couple of HtmlHelpers from the 
-Infrastructure project to actually render the registered assets:
+Infrastructure project to actually render the registered assets, namely `@Html.RenderAppStyles()` and `@Html.RenderAppScripts()`. 
+In the basic example provided here our view looks like this: 
 
 ```html
 @using Infrastructure
@@ -64,6 +68,14 @@ Infrastructure project to actually render the registered assets:
 </html>
 ```
 
+## Asset Render Order
+There is limited support for 
+```csharp
+var assetStore = AppAssetStore.GetInstance;
+assetStore.Require(new AppAsset("~/assets/js/mymodulescript.js", AssetType.ScriptFile), false);
+```
 
-For more information see 
+# Improvements
+There are likely areas for improvement on this method:
 
+* **Assets are not rendered in any particular order** - 

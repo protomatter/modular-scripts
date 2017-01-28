@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="AppAssetStore.cs" />
     <Compile Include="AppAsset.cs" />
-    <Compile Include="AppAssetStoreHelpers.cs" />
     <Compile Include="AppAssetStoreHtmlHelpers.cs" />
     <Compile Include="AssetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
