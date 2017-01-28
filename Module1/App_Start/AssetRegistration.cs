@@ -8,7 +8,7 @@ namespace Module1 {
     public static class AssetRegistration {
         public static void Start() {
             var assetStore = AppAssetStore.GetInstance;
-            assetStore.Require(new Asset("~/assets/js/module1script.js", AssetType.ScriptFile), false);
+            assetStore.Require(new AppAsset("~/assets/js/module1script.js", AssetType.ScriptFile), false);
         }
     }
 }

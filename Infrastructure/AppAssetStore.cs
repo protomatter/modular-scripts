@@ -5,8 +5,8 @@
 
     public sealed class AppAssetStore {
         private static readonly AppAssetStore Instance = new AppAssetStore();
-        private readonly List<Asset> _assets = new List<Asset>();
-        private readonly List<Asset> _layoutAssets = new List<Asset>();
+        private readonly List<AppAsset> _assets = new List<AppAsset>();
+        private readonly List<AppAsset> _layoutAssets = new List<AppAsset>();
 
         static AppAssetStore() {}
 
@@ -16,27 +16,27 @@
             get { return Instance; }
         }
 
-        public IEnumerable<Asset> GetRenderableAssets(params AssetType[] types) {
-            foreach (Asset asset in _layoutAssets.Concat(_assets).Where(x => types.Contains(x.Type))) {
+        public IEnumerable<AppAsset> GetRenderableAssets(params AssetType[] types) {
+            foreach (AppAsset asset in _layoutAssets.Concat(_assets).Where(x => types.Contains(x.Type))) {
                 asset.Rendered = true;
                 yield return asset;
             }
         }
 
-        public void Require(Asset asset, bool forLayout) {
-            if (asset == null) {
-                throw new ArgumentNullException("asset");
+        public void Require(AppAsset appAsset, bool forLayout) {
+            if (appAsset == null) {
+                throw new ArgumentNullException("appAsset");
             }
 
             // no dups
-            if (_assets.Any(x => x.Type == asset.Type && x.Text == asset.Text)) {
+            if (_assets.Any(x => x.Type == appAsset.Type && x.Text == appAsset.Text)) {
                 return;
             }
 
             if (forLayout) {
-                _layoutAssets.Add(asset);
+                _layoutAssets.Add(appAsset);
             } else {
-                _assets.Add(asset);
+                _assets.Add(appAsset);
             }
         }
     }

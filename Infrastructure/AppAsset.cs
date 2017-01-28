@@ -1,8 +1,8 @@
 ﻿namespace Infrastructure {
     using System;
 
-    public class Asset {
-        public Asset(string text, AssetType type) {
+    public class AppAsset {
+        public AppAsset(string text, AssetType type) {
             if (text == null) {
                 throw new ArgumentNullException("text");
             }

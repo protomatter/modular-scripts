@@ -70,9 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppAssetStore.cs" />
-    <Compile Include="Asset.cs" />
-    <Compile Include="AssetManagerHelpers.cs" />
-    <Compile Include="AssetManagerHtmlHelpers.cs" />
+    <Compile Include="AppAsset.cs" />
+    <Compile Include="AppAssetStoreHelpers.cs" />
+    <Compile Include="AppAssetStoreHtmlHelpers.cs" />
     <Compile Include="AssetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

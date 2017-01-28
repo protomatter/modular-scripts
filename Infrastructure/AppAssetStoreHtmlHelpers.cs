@@ -6,15 +6,15 @@ namespace Infrastructure {
     using System.Web;
     using System.Web.Mvc;
 
-    public static class AssetManagerHtmlHelpers {
+    public static class AppAssetStoreHtmlHelpers {
         public static IHtmlString RenderAppScripts(this HtmlHelper html) {
             AppAssetStore am = AppAssetStore.GetInstance;
-            Asset[] assets = am.GetRenderableAssets(AssetType.ScriptFile, AssetType.Script).ToArray();
+            AppAsset[] appAssets = am.GetRenderableAssets(AssetType.ScriptFile, AssetType.Script).ToArray();
 
             var sb = new StringBuilder();
-            var bundles = new List<Asset>();
+            var bundles = new List<AppAsset>();
 
-            foreach (Asset asset in assets) {
+            foreach (AppAsset asset in appAssets) {
                 switch (asset.Type) {
                     case AssetType.Script:
                         if (bundles.Any()) {
@@ -39,12 +39,12 @@ namespace Infrastructure {
 
         public static IHtmlString RenderAppStyles(this HtmlHelper html) {
             AppAssetStore am = AppAssetStore.GetInstance;
-            Asset[] assets = am.GetRenderableAssets(AssetType.StyleFile, AssetType.Style).ToArray();
+            AppAsset[] appAssets = am.GetRenderableAssets(AssetType.StyleFile, AssetType.Style).ToArray();
 
             var sb = new StringBuilder();
-            var bundles = new List<Asset>();
+            var bundles = new List<AppAsset>();
 
-            foreach (Asset asset in assets) {
+            foreach (AppAsset asset in appAssets) {
                 switch (asset.Type) {
                     case AssetType.Style:
                         if (bundles.Any()) {
