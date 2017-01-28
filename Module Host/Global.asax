@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Module_Host.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ModuleHost.Global" Language="C#" %>

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module Host", "Module Host\Module Host.csproj", "{3545AC31-4046-49E5-B502-6D0C7C51E072}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleHost", "Module Host\ModuleHost.csproj", "{3545AC31-4046-49E5-B502-6D0C7C51E072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{FC5929CE-05C6-4ACB-AAE9-FF1E22F5B3F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module1", "Module1\Module1.csproj", "{6F8C4D85-C2B1-4FAA-A038-B3825F56BE62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3545AC31-4046-49E5-B502-6D0C7C51E072}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3545AC31-4046-49E5-B502-6D0C7C51E072}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3545AC31-4046-49E5-B502-6D0C7C51E072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC5929CE-05C6-4ACB-AAE9-FF1E22F5B3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5929CE-05C6-4ACB-AAE9-FF1E22F5B3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5929CE-05C6-4ACB-AAE9-FF1E22F5B3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5929CE-05C6-4ACB-AAE9-FF1E22F5B3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8C4D85-C2B1-4FAA-A038-B3825F56BE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8C4D85-C2B1-4FAA-A038-B3825F56BE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8C4D85-C2B1-4FAA-A038-B3825F56BE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8C4D85-C2B1-4FAA-A038-B3825F56BE62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
