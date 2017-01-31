@@ -1,5 +1,7 @@
 ﻿# Modular Javacript and Stylesheets in C# #
 
+Inspired by: https://github.com/ronnieoverby/MvcAssetManager
+
 **Blog Post:** http://www.protomatter.co.uk/blog/development/2017/01/modular-javacript-and-stylesheets-in-c-sharp/ - 
 a little more information about this approach.
 
