@@ -17,7 +17,7 @@
         }
 
         public IEnumerable<AppAsset> GetRenderableAssets(params AssetType[] types) {
-            foreach (AppAsset asset in _layoutAssets.Concat(_assets).Where(x => !x.Rendered && types.Contains(x.Type))) {
+            foreach (AppAsset asset in _layoutAssets.Concat(_assets).Where(x => types.Contains(x.Type))) {
                 asset.Rendered = true;
                 yield return asset;
             }
