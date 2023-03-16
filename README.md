@@ -49,7 +49,7 @@ just use `console.log()` in the Javascripts to print to the browser console.
 The module host project pulls all the parts together, it references the Infrastructure project and the two 
 module projects. It uses the `AppAssetStore` to register JavaScript and a stylesheet of it's own and 
 configures the [EmbeddedResourceVirtualPathProvider](https://www.nuget.org/packages/EmbeddedResourceVirtualPathProvider) 
-by [Harry McIntyre](http://www.adverseconditionals.com/) which gives us access to the embedded assets in the
+by Harry McIntyre which gives us access to the embedded assets in the
 module assemblies.
 
 In this project we have a default controller and a view. The view uses a couple of HtmlHelpers from the 
